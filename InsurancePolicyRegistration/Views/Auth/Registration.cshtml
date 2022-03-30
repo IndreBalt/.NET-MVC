@@ -1,0 +1,38 @@
+﻿@model InsurancePolicyRegistration.Models.Registration
+@{
+    ViewData["Title"] = "Kurti naują vartotoją";
+}
+
+<form method="post" asp-action="Registration">
+    @Html.AntiForgeryToken()
+    <div>
+        <h2>Kurti naują vartotoją</h2>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Name" class="form-label"></label>
+        <input asp-for="@Model.Name" class="form-control">
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Email" class="form-label"></label>
+        <input asp-for="@Model.Email" class="form-control">
+        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Password" class="form-label"></label>
+        <input asp-for="@Model.Password" class="form-control">
+        <span asp-validation-for="@Model.Password" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.ConfirmPassword" class="form-label"></label>
+        <input asp-for="@Model.ConfirmPassword" class="form-control">
+        <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Kurti" />
+    <a class="btn btn-danger" asp-area="" asp-controller="Auth" asp-action="Index">Atgal</a>
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

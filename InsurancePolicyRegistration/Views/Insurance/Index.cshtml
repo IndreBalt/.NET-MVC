@@ -1,0 +1,55 @@
+﻿@model IEnumerable<User.InsurancePolicy>
+@{
+    ViewData["Title"] = "Polisų sąrašas";
+}
+
+
+<div>
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2>Polisų sąrašas</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a class="btn btn-primary" asp-area="" asp-controller="Insurance" asp-action="Create">Pridėti draudimo polisą</a>
+        </div>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Pavadinimas/Poliso nr</th>
+                    <th scope="col">Draudimo rūšis</th>
+                    <th scope="col">Pradžios data</th>
+                    <th scope="col">Pabaigos data</th>
+                    <th scope="col">Veiksmai</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var policy in Model)
+                {
+                    <tr>
+                        <td>@policy.PolicyTitle</td>
+                        <td>@policy.InsuranceType</td>
+                        <td>@policy.StartDate</td>
+                        <td>@policy.EndDate</td>
+                        <td>
+                            <div class="row">
+                                <a class="link-primary p-1" asp-area="" asp-controller="Insurance"  asp-route-Id="@policy.Id" asp-action="Update">Redaguoti</a>   
+                                <a class="link-primary p-1" asp-area="" asp-controller="Insurance"  asp-route-Id="@policy.Id" asp-action="Delete">Ištrinti</a>
+
+                            </div>
+                           
+
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    }
+
+</div>
+
+

@@ -1,0 +1,30 @@
+﻿@model User.InsurancePolicy
+@{
+    ViewData["Title"] = "Ištrinti draudimo polisą";
+}
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden />
+    <div>
+        <h2>Ištrinti draudimo polisą</h2>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PolicyTitle" class="form-label"></label>
+        <input asp-for="PolicyTitle" disabled class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="InsuranceType" class="form-label"></label>
+        <input asp-for="InsuranceType" disabled class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="StartDate" class="form-label"></label>
+        <input asp-for="StartDate" disabled class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EndDate" class="form-label"></label>
+        <input asp-for="EndDate" disabled class="form-control">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Ištrinti" />
+    <a class="btn btn-danger" asp-area="" asp-controller="Insurance" asp-action="Index">Atgal</a>
+</form>
+

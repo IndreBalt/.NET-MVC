@@ -1,0 +1,45 @@
+﻿@model User.InsurancePolicy
+@{
+    ViewData["Title"] = "Pridėti draudimo polisą";
+}
+
+<form method="post" asp-action="Update">
+    <div>
+        <h2>Redaguoti draudimo polisą</h2>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PolicyTitle" class="form-label"></label>
+        <input asp-for="PolicyTitle" class="form-control">
+        <span asp-validation-for="PolicyTitle" class="text-danger"></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="InsuranceType" class="form-label"></label>
+        <select class="form-control" asp-for="InsuranceType">
+            <option selected>Pasirinkite</option>
+            <option value="TPVCA">TPVCA</option>
+            <option value="KASKO">KASKO</option>
+            <option value="Gyvybės draudimas">Gyvybės draudimas</option>
+            <option value="Būsto draudimas">Būsto draudimas</option>
+            <option value="Turto draudimas">Turto draudimas</option>
+        </select>
+        <span asp-validation-for="InsuranceType" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="StartDate" class="form-label"></label>
+        <input asp-for="StartDate" class="form-control">
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EndDate" class="form-label"></label>
+        <input asp-for="EndDate" class="form-control">
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Redaguoti" />
+    <a class="btn btn-danger" asp-area="" asp-controller="Insurance" asp-action="Index">Atgal</a>
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

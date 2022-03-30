@@ -1,0 +1,7 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\Indre\source\repos\ServicesInsurances\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Data" Path="C:\Users\Indre\source\repos\Data\obj\Debug\net5.0\scopedcss\projectbundle\" />
+  <ContentRoot BasePath="_content/Data" Path="C:\Users\Indre\source\repos\Data\wwwroot\" />
+  <ContentRoot BasePath="_content/User" Path="C:\Users\Indre\source\repos\User\obj\Debug\net5.0\scopedcss\projectbundle\" />
+  <ContentRoot BasePath="_content/User" Path="C:\Users\Indre\source\repos\User\wwwroot\" />
+</StaticWebAssets>
